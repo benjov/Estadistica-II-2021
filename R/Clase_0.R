@@ -57,7 +57,7 @@ I <- c(1, 1, 1, 1, 1, 1, 1, 1, 1)
 
 ObjetoGuardado %*% I # Producto punto entre vectores
 
-ListaGuardada <- list(c("Omar", "José"), c(24,29), c(TRUE, FALSE))
+ListaGuardada <- list(c("Omar", "Jose"), c(24,29), c(TRUE, FALSE))
 
 ListaGuardada
 
@@ -139,7 +139,7 @@ args(sample)
 m_podada <- function(x, n){
   # Funcion de la media podada
   N = length(x)
-  
+  #x = sort(x)
   x = x[ (n+1) : (N-n) ]
   
   sum(x) / length(x)
@@ -197,7 +197,7 @@ hchart(AMZN)
 ### Descargamos la serie de Nasdaq 
 getSymbols("NDAQ")
 
-head(AMZN, 2)
+head(NDAQ, 2)
 
 ### Gráfico
 hchart(NDAQ)
