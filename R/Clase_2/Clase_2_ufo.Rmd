@@ -1,0 +1,104 @@
+---
+title: "Clase de UfO's"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+Este es un documento de R Markdown. Markdown es una sintaxis de formato simple para la creación de documentos HTML, PDF y MS Word. Para obtener más detalles sobre el uso de R Markdown, consulta: https://rmarkdown.rstudio.com/
+
+Al hacer clic en el botón ** Knit ** ("tejer"), se generará un documento que incluye tanto el contenido como la salida de cualquier fragmento de código R incrustado dentro del documento. Puede incrustar un fragmento de código R como este:
+
+```{r}
+
+install.packages("rmarkdown")
+
+```
+
+También puede incrustar gráficos, por ejemplo:
+
+```{r, echo = FALSE}
+
+plot( c(1, 2, 3) , type = 'l')
+
+```
+
+Tenga en cuenta que el parámetro ** echo = FALSE ** se agregó al fragmento de código para evitar la impresión del código R que generó el gráfico.
+
+Para establecer opciones globales que se apliquen a cada fragmento de su archivo o fragmento de código ** knitr::opts_chunk$set(echo = TRUE) **
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+#### Dependencies
+
+```{r, warning=FALSE, message = FALSE}
+
+install.packages("tidyverse")
+
+library(tidyverse)
+
+```
+
+#### Read and preview CSV
+```{r}
+
+ufo <- read_csv("ufo.csv")
+
+ufo %>% head()
+
+```
+
+El operador pipeline %>% es útil para concatenar múltiples dplyr operaciones.
+
+#### El número total de avistamientos de ovnis
+```{r}
+
+ufo.count <- ufo %>% count()
+
+paste("Se localizaron ", ufo.count, "avistamientos de ovnis")
+
+```
+
+#### El número y la lista de estados, provincias y territorios
+```{r}
+
+ufo$state %>% unique() %>% length()
+
+ufo$state %>% unique()
+
+```
+
+#### La duración promedio del avistamiento de ovnis por estado
+```{r}
+
+ufo %>% 
+  group_by(state) %>% 
+  summarise(avg.duration = mean(`duration (seconds)`)) %>% 
+  arrange(desc(avg.duration)) 
+
+```
+
+#### El número de avistamientos de ovnis por estado
+```{r}
+
+ufo %>% 
+  group_by(state) %>% 
+  summarise(number.sightings = n()) %>% 
+  arrange(desc(number.sightings))
+
+```
+
+#### El número de avistamientos por forma de ovni percibida
+```{r}
+
+ufo %>% 
+  group_by(shape) %>% 
+  summarise(shape.count = n()) %>% 
+  arrange(desc(shape.count))
+
+```
+
