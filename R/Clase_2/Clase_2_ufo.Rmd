@@ -1,8 +1,8 @@
 ---
 title: "Clase de UfO's"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 Este es un documento de R Markdown. Markdown es una sintaxis de formato simple para la creación de documentos HTML, PDF y MS Word. Para obtener más detalles sobre el uso de R Markdown, consulta: https://rmarkdown.rstudio.com/
@@ -11,7 +11,7 @@ Al hacer clic en el botón ** Knit ** ("tejer"), se generará un documento que i
 
 ```{r}
 
-install.packages("rmarkdown")
+#install.packages("rmarkdown")
 
 ```
 
@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, warning=FALSE, message = FALSE}
 
-install.packages("tidyverse")
+#install.packages("tidyverse")
 
 library(tidyverse)
 

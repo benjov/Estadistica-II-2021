@@ -1,0 +1,334 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Clase de UfO's},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Clase de UfO's}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+Este es un documento de R Markdown. Markdown es una sintaxis de formato
+simple para la creación de documentos HTML, PDF y MS Word. Para obtener
+más detalles sobre el uso de R Markdown, consulta:
+\url{https://rmarkdown.rstudio.com/}
+
+Al hacer clic en el botón ** Knit ** (``tejer''), se generará un
+documento que incluye tanto el contenido como la salida de cualquier
+fragmento de código R incrustado dentro del documento. Puede incrustar
+un fragmento de código R como este:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#install.packages("rmarkdown")}
+\end{Highlighting}
+\end{Shaded}
+
+También puede incrustar gráficos, por ejemplo:
+
+\includegraphics{Clase_2_ufo_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+Tenga en cuenta que el parámetro ** echo = FALSE ** se agregó al
+fragmento de código para evitar la impresión del código R que generó el
+gráfico.
+
+Para establecer opciones globales que se apliquen a cada fragmento de su
+archivo o fragmento de código ** knitr::opts\_chunk\$set(echo = TRUE) **
+
+\paragraph{Dependencies}\label{dependencies}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#install.packages("tidyverse")}
+
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Read and preview CSV}\label{read-and-preview-csv}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"ufo.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Missing column names filled in: 'X1' [1]
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   X1 = col_double(),
+##   datetime = col_character(),
+##   city = col_character(),
+##   state = col_character(),
+##   country = col_character(),
+##   shape = col_character(),
+##   `duration (seconds)` = col_double(),
+##   `duration (hours/min)` = col_character(),
+##   comments = col_character(),
+##   `date posted` = col_character(),
+##   latitude = col_double(),
+##   longitude = col_double()
+## )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo }\OperatorTok{%>%}\StringTok{ }\KeywordTok{head}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 12
+##      X1 datetime city  state country shape `duration (seco~ `duration (hour~
+##   <dbl> <chr>    <chr> <chr> <chr>   <chr>            <dbl> <chr>           
+## 1     0 10/10/1~ san ~ tx    us      cyli~             2700 45 minutes      
+## 2     2 10/10/1~ kane~ hi    us      light              900 15 minutes      
+## 3     3 10/10/1~ bris~ tn    us      sphe~              300 5 minutes       
+## 4     4 10/10/1~ norw~ ct    us      disk              1200 20 minutes      
+## 5     5 10/10/1~ pell~ al    us      disk               180 3  minutes      
+## 6     6 10/10/1~ live~ fl    us      disk               120 several minutes 
+## # ... with 4 more variables: comments <chr>, `date posted` <chr>,
+## #   latitude <dbl>, longitude <dbl>
+\end{verbatim}
+
+El operador pipeline \%\textgreater{}\% es útil para concatenar
+múltiples dplyr operaciones.
+
+\paragraph{El número total de avistamientos de
+ovnis}\label{el-nuxfamero-total-de-avistamientos-de-ovnis}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo.count <-}\StringTok{ }\NormalTok{ufo }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{()}
+
+\KeywordTok{paste}\NormalTok{(}\StringTok{"Se localizaron "}\NormalTok{, ufo.count, }\StringTok{"avistamientos de ovnis"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Se localizaron  66515 avistamientos de ovnis"
+\end{verbatim}
+
+\paragraph{El número y la lista de estados, provincias y
+territorios}\label{el-nuxfamero-y-la-lista-de-estados-provincias-y-territorios}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo}\OperatorTok{$}\NormalTok{state }\OperatorTok{%>%}\StringTok{ }\KeywordTok{unique}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{length}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 67
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo}\OperatorTok{$}\NormalTok{state }\OperatorTok{%>%}\StringTok{ }\KeywordTok{unique}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "tx" "hi" "tn" "ct" "al" "fl" "ca" "nc" "ny" "ky" "mi" "ma" "ks" "sc" "wa"
+## [16] "co" "nh" "wi" "me" "ga" "pa" "il" "ar" "on" "mo" "oh" "in" "az" "mn" "nv"
+## [31] "nf" "ne" "or" "bc" "ia" "va" "id" "nm" "nj" "mb" "wv" "ok" "ri" "nb" "vt"
+## [46] "la" "pr" "ak" "ms" "ut" "md" "ab" "mt" "sk" "wy" "sd" "pq" "de" "nd" "nt"
+## [61] "qc" "sa" "ns" "yk" "pe" "yt" "dc"
+\end{verbatim}
+
+\paragraph{La duración promedio del avistamiento de ovnis por
+estado}\label{la-duraciuxf3n-promedio-del-avistamiento-de-ovnis-por-estado}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(state) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{avg.duration =} \KeywordTok{mean}\NormalTok{(}\StringTok{`}\DataTypeTok{duration (seconds)}\StringTok{`}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(avg.duration)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 67 x 2
+##    state avg.duration
+##    <chr>        <dbl>
+##  1 ar         115893.
+##  2 on          62892.
+##  3 hi          26196.
+##  4 wa          15265.
+##  5 fl          14891.
+##  6 la          12445.
+##  7 va          10903.
+##  8 ms           9206.
+##  9 ga           7708.
+## 10 wv           6778.
+## # ... with 57 more rows
+\end{verbatim}
+
+\paragraph{El número de avistamientos de ovnis por
+estado}\label{el-nuxfamero-de-avistamientos-de-ovnis-por-estado}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(state) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{number.sightings =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(number.sightings))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 67 x 2
+##    state number.sightings
+##    <chr>            <int>
+##  1 ca                8683
+##  2 fl                3754
+##  3 wa                3709
+##  4 tx                3397
+##  5 ny                2915
+##  6 il                2447
+##  7 az                2362
+##  8 pa                2319
+##  9 oh                2252
+## 10 mi                1781
+## # ... with 57 more rows
+\end{verbatim}
+
+\paragraph{El número de avistamientos por forma de ovni
+percibida}\label{el-nuxfamero-de-avistamientos-por-forma-de-ovni-percibida}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ufo }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(shape) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{shape.count =} \KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(shape.count))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 28 x 2
+##    shape     shape.count
+##    <chr>           <int>
+##  1 light           14130
+##  2 triangle         6817
+##  3 circle           6404
+##  4 fireball         5364
+##  5 unknown          4774
+##  6 other            4705
+##  7 sphere           4552
+##  8 disk             4319
+##  9 oval             3160
+## 10 formation        2088
+## # ... with 18 more rows
+\end{verbatim}
+
+\end{document}

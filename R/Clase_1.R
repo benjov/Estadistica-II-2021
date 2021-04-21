@@ -34,7 +34,7 @@ args(rnorm)
 rnorm(10, mean = 0, sd = 2)
 
 # Importante (para Simulaciones que sean replicables):
-set.seed(10101) # Es una constate (la semilla) que fija la serie de numeros aleatorios
+#set.seed(10101) # Es una constate (la semilla) que fija la serie de numeros aleatorios
 Z_t <- rnorm(1000, mean = 0, sd = 2)
 
 mean(Z_t)
@@ -133,7 +133,7 @@ ggplot(data = U, aes( x = Tiempo, y = SU_t) ) +
   theme(plot.caption = element_text(size = 10, hjust = 0)) +
   theme(plot.margin = unit(c(1,1,1,1), "cm")) +
   labs(
-    title = "Gráfica de la serie de lannzamientos de una moneda",
+    title = "Gráfica de la serie de lanzamientos de una moneda",
     subtitle = "Valores en pesos",
     caption = "Fuente: Elaboración propia. \nNotas: Simulación del lanzamiento de una moneda."
   )
@@ -155,7 +155,7 @@ Opciones <- c(-1, 1)
 Soporte <- 10000
 
 # Vamos a réplicar el proceso con estos parámetros
-Rango <- 200
+Rango <- 300
 #
 Caminos <- 10
 
