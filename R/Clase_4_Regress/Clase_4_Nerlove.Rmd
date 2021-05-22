@@ -173,8 +173,8 @@ dataframe %>% head()
 ```{r, echo = FALSE}
 
 fig <- plot_ly(alpha = 0.6)
-#fig <- fig %>% add_histogram(x = dataframe$plabor, name = 'plabor')
-fig <- fig %>% add_histogram(x = ~dataframe$pkap, name = 'pkap')
+fig <- fig %>% add_histogram(x = dataframe$plabor, name = 'plabor')
+#fig <- fig %>% add_histogram(x = ~dataframe$pkap, name = 'pkap')
 #fig <- fig %>% layout(barmode = "overlay")
 
 fig
